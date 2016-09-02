@@ -1,13 +1,15 @@
 import { createApp } from 'mantra-core';
-import initContext from './configs/context';
-import appConfig from './configs/app';
+import initContext   from './configs/context';
+import appConfig     from './configs/app';
+import coreModule    from './modules/core';
 
-import coreModule from './modules/core';
+export default function start() {
 
-const context = initContext();
+  console.log('starting...');
 
-const app = createApp(context);
+  const context = initContext();
+  const app = createApp(context);
 
-app.loadModule(coreModule);
-
-app.init();
+  app.loadModule(coreModule);
+  app.init();
+}
