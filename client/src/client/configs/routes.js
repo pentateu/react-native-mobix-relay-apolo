@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Navigator } from 'react-native';
-  import { Scene, Router } from 'react-native-router-flux';
+import { Scene, Router } from 'react-native-router-flux';
 
 import Home from '../modules/core/containers/home';
+
+
+/**
+ * option2: crate a big router for the whole app here...
+*/
 
 export default class Routes extends Component {
     render() {
