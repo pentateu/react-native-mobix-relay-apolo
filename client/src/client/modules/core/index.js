@@ -4,6 +4,12 @@ import routes from './routes';
 /**
  * Core module will be responsible for:
  *
+
+ * App Settings
+    Notifications
+    ...
+    ..
+    
  * Auth (day 2 Auth will be its own module)
  *  check if user hasn a valid session
  *  present login screen

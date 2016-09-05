@@ -10,7 +10,10 @@ import LoginScreen from './containers/home';
 
 //import Home from './containers/home';
 
-
+//one way could be
+context.route('module/screenX')
+context.gotoScene('module/settings')
+context.gotoScene('module/login')
 
 export default class Routes extends Component {
     render() {
