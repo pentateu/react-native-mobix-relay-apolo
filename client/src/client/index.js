@@ -1,7 +1,6 @@
 import { createApp } from 'mantra-core';
 import initContext   from './configs/context';
-import appConfig     from './configs/app';
-import coreModule    from './modules/core';
+import entryPoint    from './entrypoint';
 
 export default function start() {
 
@@ -10,6 +9,6 @@ export default function start() {
   const context = initContext();
   const app = createApp(context);
 
-  app.loadModule(coreModule);
+  app.loadModule(entryPoint);
   app.init();
 }
