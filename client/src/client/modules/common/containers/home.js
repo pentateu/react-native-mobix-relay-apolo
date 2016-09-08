@@ -2,8 +2,8 @@
  * Created by rn1466 on 31/08/16.
  */
 import { useDeps, composeAll, compose } from 'mantra-core';
-import L from '..//components/loading';
-import E from '..//components/error';
+import L from '../components/loading';
+import E from '../components/error';
 
 import Home from '../components/home';
 

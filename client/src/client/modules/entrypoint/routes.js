@@ -9,13 +9,13 @@ import { useDeps, composeAll } from 'mantra-core';
  * @returns {XML}
  * @constructor
  */
-const Routes = () => {
+const Routes = (props) => {
     return(
         <Router sceneStyle={{paddingTop: Navigator.NavigationBar.Styles.General.TotalNavHeight}}>
             <Scene key="root">
-                { this.props.context && this.props.context.modules && context.modules.map((module) => {
+                { props.context && props.context().modules.map((module) => {
                     console.log(JSON.stringify(module));
-                    return module.router().render();
+                    return module.routes();
                 }) }
             </Scene>
         </Router>
@@ -28,10 +28,17 @@ const Routes = () => {
  * just like any other container
  * That is the piece that is missing for the routes to be rendered.
  */
+export const depsMapper = (context, actions) => ({
+    context : () => context,
+    Actions: context.Actions
+});
 
 
 export default injectDeps => {
-    const RoutesCtx = injectDeps(Routes);
+    const RoutesContainer = composeAll(
+        useDeps(depsMapper)
+    )(Routes);
+    const RoutesCtx = injectDeps(RoutesContainer);
     console.log('trying to register the component');
     AppRegistry.registerComponent('client', () => RoutesCtx);
     console.log('Entrypoint registered successfully');

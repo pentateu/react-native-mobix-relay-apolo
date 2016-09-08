@@ -1,5 +1,5 @@
 import { Actions } from 'react-native-router-flux';
-import common from '../entrypoint/modules/common';
+import common from '../modules/common';
 
 // user store may go here
 

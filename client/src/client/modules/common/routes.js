@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { Navigator } from 'react-native';
-import { Scene, Router } from 'react-native-router-flux';
+import { Scene } from 'react-native-router-flux';
 
 import Home from './containers/home';
 import Screen2 from './containers/screen2';
