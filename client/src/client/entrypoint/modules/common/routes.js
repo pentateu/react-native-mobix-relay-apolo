@@ -8,13 +8,11 @@ import { Scene, Router } from 'react-native-router-flux';
 import Home from './containers/home';
 import Screen2 from './containers/screen2';
 
-export default class Routes extends Component {
-    render() {
-        return(
-            <Scene key="common">
-                <Scene key="home" initial={true} component={Home} title="Home"/>
-                <Scene key="screen2" component={Screen2} title="Screen2"/>
-            </Scene>
-        );
-    }
-}
+export default Routes = () => {
+    return(
+        <Scene key="common">
+            <Scene key="home" initial={true} component={Home} title="Home"/>
+            <Scene key="screen2" component={Screen2} title="Screen2"/>
+        </Scene>
+    );
+};
